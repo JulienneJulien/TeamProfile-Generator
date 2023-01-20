@@ -14,7 +14,7 @@
   - [Questions](#questions)
 
 ## Description
-*Created a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person..* **Inquirer package** and **Jest** was included in this application. 
+*Created a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.* **Inquirer package** and **Jest** was included in this application. 
 
 >GIVEN a command-line application that accepts user input
 >
