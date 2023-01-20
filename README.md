@@ -1,2 +1,4 @@
 # TeamProfile-Generator
-Created a Node.js command-line application that takes in information about employees.
+
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org/)
+
