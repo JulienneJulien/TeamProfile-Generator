@@ -76,14 +76,14 @@ const createManager = () => {
 ])
     .then (managerInput => {
         const {name, ID, email, officeNumber} = managerInput;
-        const manager = new Manager (name, ID, email, officeNumber);
+        const manager = (name, ID, email, officeNumber);
         teamRoles.push(manager);
         console.log(manager);
     })
 }
 // ADD EMPLOYEE PROMPTS
 const createEmployee = () => {
-    console.log('Please add your employees to the team');
+    console.log('Please add the employee roles to your team profile');
     return inquirer.prompt([{
         type: 'list',
         name: 'teamRole',
@@ -92,6 +92,7 @@ const createEmployee = () => {
     {    
         type: 'input',
         name: 'name',
+        when: (input) => input.teamRole === "Engineer",
         message: "What is your engineer's name?",
         validate: nameEntered => {
             if (nameEntered) {
@@ -105,6 +106,7 @@ const createEmployee = () => {
     {
         type: 'input',
         name: 'ID',
+        when: (input) => input.teamRole === "Engineer",
         message: "What is your engineer's employee ID?",
         validate: EnterID => {
             if (isNaN(EnterID)) {
@@ -118,6 +120,7 @@ const createEmployee = () => {
     {
         type: 'input',
         name: 'email',
+        when: (input) => input.teamRole === "Engineer",
         message: "What is your engineer's email address?",
         validate: emailEntered => {
             if (emailEntered) {
@@ -131,7 +134,7 @@ const createEmployee = () => {
     {
         type: 'input',
         name: 'github',
-        when: (input) => input.role === "Engineer",
+        when: (input) => input.teamRole === "Engineer",
         message: "What is your engineer's GitHub profile?",
         validate: githubEntered => {
             if (githubEntered) {
@@ -142,10 +145,52 @@ const createEmployee = () => {
             }
             }
     },
+    {    
+        type: 'input',
+        name: 'name',
+        when: (input) => input.teamRole === "Intern",
+        message: "What is your intern's name?",
+        validate: nameEntered => {
+            if (nameEntered) {
+                return true;
+            } else {
+                console.log("Please enter your intern's name to continue!");
+                return false;
+            }
+            }
+    },
+    {
+        type: 'input',
+        name: 'ID',
+        when: (input) => input.teamRole === "Intern",
+        message: "What is your intern's employee ID?",
+        validate: EnterID => {
+            if (isNaN(EnterID)) {
+                console.log("Please enter your intern's employee ID to continue!");
+                return false;
+            } else {
+                return true;
+            }
+            }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        when: (input) => input.teamRole === "Intern",
+        message: "What is your intern's email address?",
+        validate: emailEntered => {
+            if (emailEntered) {
+                return true;
+            } else {
+                console.log("Please enter your intern's email address to continue!");
+                return false;
+            }
+            }
+    },
     {
         type: 'input',
         name: 'school',
-        when: (input) => input.role === "Intern",
+        when: (input) => input.teamRole === "Intern",
         message: "Which school did your intern went to?",
         validate: schoolEntered => {
             if (schoolEntered) {
@@ -159,8 +204,8 @@ const createEmployee = () => {
     {
         type: 'input',
         name: 'buildTeam',
-        when: (input) => input.role === "Finish building my team",
-        message: "Please continue building your team profiles"
+        when: (input) => input.teamRole === "Finish building my team",
+        message: "Please continue building your team profiles",
     },
     {
         type: "confirm",
@@ -171,25 +216,25 @@ const createEmployee = () => {
     ])
 
     .then (employeeInput=>{
-        let {name, ID, email, role, github, school, menuPrompt} = employeeInput;
+        let {name, ID, email, teamRole, github, school, menuPrompt} = employeeInput;
         let employee;
         
 // ENGINEER ASSIGNED
-        if (role === "Engineer"){
-            employee = new Engineer (name, ID, email, github);
+        if (teamRole === "Engineer"){
+            employee = (name, ID, email, github);
             console.log(employee)
         }
         
 // INTERN ASSIGNED
-        if (role === "Intern"){
-            employee = new Intern (name, ID, email, school);
+        if (teamRole === "Intern"){
+            employee = (name, ID, email, school);
             console.log(employee)
         }
 
         teamRoles.push(employee);
 
 // CHOICE MENU TO ADD ONE MORE EMPLOYEE, RUN ADDEMPLOYEE AGAIN
-        if (oneMore) {
+        if (menuPrompt) {
             return createEmployee(teamRoles);
         }
         else{
@@ -219,5 +264,5 @@ createManager()
     return writeFile(pageHTML);
 }) 
 .catch (err => {
-    console(err);
+    console.log(err);
 })
