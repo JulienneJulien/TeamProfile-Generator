@@ -14,7 +14,7 @@
   - [Questions](#questions)
 
 ## Description
-*Created a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.* **Inquirer package** and **Jest** was included in this application. 
+*Created a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.* **Inquirer package** and **Jest package** was included in this application. 
 
 >GIVEN a command-line application that accepts user input
 >
@@ -73,7 +73,7 @@ IMAGES/DEMO VIDEO GOES HERE
 <br>*Contributor Covenant encourages contributions of all kinds from people around the world. This makes the practice of open source as much social as it is technical.*
 
 ## Tests
-*For testing, the application uses* **Jest**.
+*For testing, the application uses* **Jest** package.
 
 ## License
     This application is licensed under the MIT license.
