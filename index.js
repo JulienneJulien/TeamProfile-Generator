@@ -12,7 +12,6 @@ const generateHTML = require("./src/generateHTML");
 const distDir = path.resolve(__dirname, "dist");
 const distPath = path.join(distDir, "teamProfile.html");
 
-const render = require("./src/generateHTML");
 // TEAM ROLES ARRAY
 const teamRoles = [];
 // const idArray = [];//
@@ -22,7 +21,7 @@ console.log('Welcome to my TeamProfile_Generator_App! Please use `npm run reset`
 // TO BUILD TEAM/ADD MANAGER PROMPTS
 const createManager = () => {
     console.log('Please build your team');
-    return inquirer.createPrompt([{
+    return inquirer.prompt([{
         type: 'input',
         name: 'name',
         message: 'What is your team manager name?',
@@ -66,7 +65,7 @@ const createManager = () => {
         name: 'officeNumber',
         message: 'What is your team manager office number?',
         validate: numberEntered => {
-            if (isNAN(numberEntered)) {
+            if (isNaN(numberEntered)) {
                 console.log('Please enter your team manager office number to continue!');
                 return false;
             } else {
@@ -85,7 +84,7 @@ const createManager = () => {
 // ADD EMPLOYEE PROMPTS
 const createEmployee = () => {
     console.log('Please add your employees to the team');
-    return inquirer.createPrompt([{
+    return inquirer.prompt([{
         type: 'list',
         name: 'teamRole',
         choices: ['Engineer','Intern', 'Finish building my team']
@@ -189,12 +188,36 @@ const createEmployee = () => {
 
         teamRoles.push(employee);
 
-        // if want to add one more employee, run addEmployee again
+// CHOICE MENU TO ADD ONE MORE EMPLOYEE, RUN ADDEMPLOYEE AGAIN
         if (oneMore) {
-            return addEmployee(teamRoles);
+            return createEmployee(teamRoles);
         }
         else{
             return teamRoles;
         }
     })
     }
+// TO CREATE HTML PROFILE
+const writeFile = data => {
+    fs.writeFile("./dist/index.html", data, (err) => {
+        if (err) {
+            console.log(err)
+        }
+        else {
+        console.log('You have successfully generated your team profile!')
+        }
+    });
+};
+
+// 
+createManager()
+.then (createEmployee)
+.then (teamRoles => {
+    return generateHTML(teamRoles);
+})
+.then (pageHTML => {
+    return writeFile(pageHTML);
+}) 
+.catch (err => {
+    console(err);
+})
