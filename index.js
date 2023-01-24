@@ -76,7 +76,7 @@ const createManager = () => {
 ])
     .then (managerInput => {
         const {name, ID, email, officeNumber} = managerInput;
-        const manager = (name, ID, email, officeNumber);
+        const manager =new Manager (name, ID, email, officeNumber);
         teamRoles.push(manager);
         console.log(manager);
     })
@@ -221,13 +221,13 @@ const createEmployee = () => {
         
 // ENGINEER ASSIGNED
         if (teamRole === "Engineer"){
-            employee = (name, ID, email, github);
+            employee = new Engineer(name, ID, email, github);
             console.log(employee)
         }
         
 // INTERN ASSIGNED
         if (teamRole === "Intern"){
-            employee = (name, ID, email, school);
+            employee = new Intern(name, ID, email, school);
             console.log(employee)
         }
 
