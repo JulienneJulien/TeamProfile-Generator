@@ -103,13 +103,12 @@ const generateProfilePage = function (employeeProfileCards) {
     <body>
         <header>
             <nav class="navBar" id="navbar"
-                <h1 id="navBarText"> TEAM PROFILE</h2>
+                <h1 id="navBarText"> TEAM PROFILE</h1>
             </nav>
         </header>
         <main>
             <div class="container">
                 <div class="row justify-content-center" id="profileCards"> 
-                //   TEAM CARDS
                   ${employeeProfileCards}
                 </div>
             </div>
