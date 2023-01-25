@@ -7,28 +7,37 @@
 }
 body {
     background-color: var(--lightgray);
+    box-sizing: border-box;
 }
 /* NAV-BAR STYLES ADDED*/
 .navBar {
     background: var(--seagreen);
+    padding: 50px;
 }
 
 #navBarText {
     color: var(--beige);
-    font-size: 100px;
+    font-size: 80px;
+    text-align: center;
 }
 /* PROFILE-CARD STYLES ADDED*/
 .cardHeader {
     background-color: var(--seagreen);
+    border-radius: 15px 15px 0px 0px;
 }
 
-h2, h3, i {
+h2, h3 {
     color: var(--beige);
+    text-align: center;
+}
+
+i {
+    color: var(--lightgray);
 }
 
 .cardBody {
     background-color: var(--beige);
-    border-radius: 15px 
+    border-radius: 0px 0px 15px 15px;
 }
 
 p {
@@ -39,4 +48,7 @@ p {
 
 .cardContainer {
     box-shadow: 20px 20px 20px var(--seagreen);
+    flex-wrap: wrap;
+    width: 300px;
+    margin: 10px;
 }

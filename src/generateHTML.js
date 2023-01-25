@@ -102,7 +102,7 @@ const generateProfilePage = function (employeeProfileCards) {
     </head>
     <body>
         <header>
-            <nav class="navBar" id="navbar"
+            <nav class="navBar"
                 <h1 id="navBarText"> TEAM PROFILE</h1>
             </nav>
         </header>
