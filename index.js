@@ -87,7 +87,7 @@ const createEmployee = () => {
     return inquirer.prompt([{
         type: 'list',
         name: 'teamRole',
-        choices: ['Engineer','Intern', 'Finish building my team']
+        choices: ['Engineer','Intern']
     },
     {    
         type: 'input',
@@ -201,12 +201,12 @@ const createEmployee = () => {
             }
             }
     },
-    {
-        type: 'input',
-        name: 'buildTeam',
-        when: (input) => input.teamRole === "Finish building my team",
-        message: "Please continue building your team profiles",
-    },
+    // {
+    //     type: 'input',
+    //     name: 'buildTeam',
+    //     when: (input) => input.teamRole === "Finish building my team",
+    //     message: "Please continue building your team profiles",
+    // },
     {
         type: "confirm",
         name:"menuPrompt",
