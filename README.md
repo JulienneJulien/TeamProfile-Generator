@@ -67,6 +67,8 @@
 
 https://user-images.githubusercontent.com/117052258/214960923-ba9ebf65-ccb6-41bd-b518-087fe51bcb08.mp4
 
+<img src="./assets/TEAMPROFILESCREENSHOT.png">
+
 ## Contributing
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
@@ -74,6 +76,8 @@ https://user-images.githubusercontent.com/117052258/214960923-ba9ebf65-ccb6-41bd
 
 ## Tests
 *For testing, the application uses* **Jest** package.
+
+<img src="./">
 
 ## License
     This application is licensed under the MIT license.
