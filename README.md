@@ -65,7 +65,7 @@
 `node index.js`
 - Observe the result in the terminal. See the images and video below for demo. 
 
-IMAGES/DEMO VIDEO GOES HERE
+https://user-images.githubusercontent.com/117052258/214960923-ba9ebf65-ccb6-41bd-b518-087fe51bcb08.mp4
 
 ## Contributing
 
