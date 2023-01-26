@@ -77,7 +77,7 @@ https://user-images.githubusercontent.com/117052258/214960923-ba9ebf65-ccb6-41bd
 ## Tests
 *For testing, the application uses* **Jest** package.
 
-<img src="./assets/TEST-SCREENSHOT.png">">
+<img src="./assets/TEST-SCREENSHOT.png">
 
 ## License
     This application is licensed under the MIT license.
