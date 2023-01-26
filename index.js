@@ -9,15 +9,15 @@ const Employee = require("./lib/Employee");
 
 const generateHTML = require("./src/generateHTML");
 
-const distDir = path.resolve(__dirname, "dist");
-const distPath = path.join(distDir, "teamProfile.html");
+// const distDir = path.resolve(__dirname, "dist");
+// const distPath = path.join(distDir, "teamProfile.html");
 
 // TEAM ROLES ARRAY
 const teamRoles = [];
 // const idArray = [];//
 
 // USER USAGE INSTRUCTIONS
-console.log('Welcome to my TeamProfile_Generator_App! Please use `npm run reset` to reset the dist folder');
+console.log('Welcome to my TeamProfile_Generator_App!');
 // TO BUILD TEAM/ADD MANAGER PROMPTS
 const createManager = () => {
     console.log('Please build your team');
