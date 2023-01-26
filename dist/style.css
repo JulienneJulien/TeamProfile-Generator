@@ -21,6 +21,10 @@ body {
     text-align: center;
 }
 /* PROFILE-CARD STYLES ADDED*/
+.card {
+    background-color: var(--lightgray);
+    border: none;
+}
 .cardHeader {
     background-color: var(--seagreen);
     border-radius: 15px 15px 0px 0px;
